@@ -1,9 +1,15 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-function AllExpenses() {
-    return  <View>
-    <Text>This is the Recent Expenses page</Text>
-  </View>
+function AllExpenses({ navigation }) {
+  function manageButtonPressHandler() {
+    navigation.navigate('ManageExpense');
+  }
+  return (
+    <View>
+      <Text>This is the Recent Expenses page</Text>
+      <Button title="Manage" onPress={manageButtonPressHandler} />
+    </View>
+  );
 }
 
 export default AllExpenses;

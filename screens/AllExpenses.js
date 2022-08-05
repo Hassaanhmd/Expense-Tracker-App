@@ -1,9 +1,13 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-function AllExpenses() {
+function AllExpenses({ navigation }) {
+  function manageButtonPressHandler() {
+    navigation.navigate('ManageExpense');
+  }
   return (
     <View>
       <Text>This is the All Expenses page</Text>
+      <Button title="Manage" onPress={manageButtonPressHandler} />
     </View>
   );
 }
