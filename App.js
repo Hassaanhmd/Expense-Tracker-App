@@ -52,7 +52,7 @@ function ExpensesOverview() {
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator initialRouteName="ExpensesOverview">
           <Stack.Screen
