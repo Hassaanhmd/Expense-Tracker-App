@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 
+import { GlobalStyles } from '../constants/styles';
+
 function AllExpenses({ navigation }) {
   function manageButtonPressHandler() {
     navigation.navigate('ManageExpense');
