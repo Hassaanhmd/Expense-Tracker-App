@@ -1,17 +1,11 @@
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
+
+import ExpensesOutput from '../components/ExpensesOutput/ExpensesOutput';
 
 import { GlobalStyles } from '../constants/styles';
 
 function AllExpenses({ navigation }) {
-  function manageButtonPressHandler() {
-    navigation.navigate('ManageExpense');
-  }
-  return (
-    <View>
-      <Text>This is the All Expenses page</Text>
-      <Button title="Manage" onPress={manageButtonPressHandler} />
-    </View>
-  );
+  return <ExpensesOutput expensesPeriod="Total" />;
 }
 
 export default AllExpenses;
