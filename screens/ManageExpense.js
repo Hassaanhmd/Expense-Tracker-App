@@ -1,5 +1,8 @@
 import { useLayoutEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import Button from '../components/UI/Button';
+import IconButton from '../components/UI/IconButton';
 
 import { GlobalStyles } from '../constants/styles';
 
@@ -13,13 +16,58 @@ function ManageExpense({ route, navigation }) {
     });
   }, [navigation, isEditing]);
 
+  function deleteExpenseHandler() {}
+
+  function cancelHandler() {}
+
+  function confirmHandler() {}
+
   return (
-    <View>
-      <Text>This is the Manage Expense page</Text>
+    <View style={styles.container}>
+      <View style={styles.buttons}>
+        <Button mode="flat" onPress={cancelHandler} style={styles.button}>
+          Cancel
+        </Button>
+        <Button onPress={confirmHandler} style={styles.button}>
+          {isEditing ? 'Update' : 'Add'}
+        </Button>
+      </View>
+      {isEditing && (
+        <View style={styles.deleteContainer}>
+          <IconButton
+            icon="trash"
+            color={GlobalStyles.colors.error500}
+            size={36}
+            onPress={deleteExpenseHandler}
+          />
+        </View>
+      )}
     </View>
   );
 }
 
 export default ManageExpense;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary800,
+  },
+  deleteContainer: {
+    marginTop: 16,
+    paddingTop: 8,
+    borderTopWidth: 2,
+    borderTopColor: GlobalStyles.colors.primary200,
+    alignItems: 'center',
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    minWidth: 120,
+    marginHorizontal: 8,
+  },
+});
