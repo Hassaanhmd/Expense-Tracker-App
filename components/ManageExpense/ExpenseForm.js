@@ -20,7 +20,15 @@ function ExpenseForm({ submitButtonLabel, onCancel, onSubmit }) {
     });
   }
 
-  function submitHandler() {}
+  function submitHandler() {
+    const expenseData = {
+      amount: +inputValues.amount, // '+' converts string to a number
+      date: new Date(inputValues.date), // works provided date matches the format of YYYY-MM-DD a new date object can be created
+      description: inputValues.description,
+    };
+
+    onSubmit(expenseData);
+  }
 
   return (
     <View style={styles.form}>
