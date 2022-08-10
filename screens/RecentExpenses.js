@@ -11,7 +11,7 @@ function RecentExpenses({ navigation }) {
 
   useEffect(() => {
     async function getExpenses() {
-      await fetchExpenses();
+      const expenses = await fetchExpenses();
     }
 
     getExpenses();
