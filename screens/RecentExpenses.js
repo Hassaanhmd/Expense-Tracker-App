@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ExpensesOutput from '../components/ExpensesOutput/ExpensesOutput';
 
 import { GlobalStyles } from '../constants/styles';
@@ -12,6 +12,7 @@ function RecentExpenses({ navigation }) {
   useEffect(() => {
     async function getExpenses() {
       const expenses = await fetchExpenses();
+      expensesCtx.setExpenses(expenses);
     }
 
     getExpenses();
