@@ -2,8 +2,8 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://q7-ybu.anonymous.expense-tracker-app.exp.direct",
-  "packagerNgrokUrl": "https://q7-ybu.anonymous.expense-tracker-app.exp.direct",
-  "ngrokPid": 4248,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }
