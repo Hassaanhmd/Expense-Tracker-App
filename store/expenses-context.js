@@ -12,7 +12,7 @@ function expensesReducer(state, action) {
   //job of reducer is to always return a new state value (either existing or manipulated state)
   switch (action.type) {
     case 'ADD':
-      return [...action.payload, ...state];
+      return [action.payload, ...state];
     case 'SET':
       const inverted = action.payload.reverse();
       return inverted;
@@ -33,7 +33,7 @@ function expensesReducer(state, action) {
 }
 
 function ExpensesContextProvider({ children }) {
-  const [expensesState, dispatch] = useReducer(expensesReducer, []); //DUMMY_EXPENSES is the initital state on load
+  const [expensesState, dispatch] = useReducer(expensesReducer, []); // empty array is initial state to be loaded
 
   function addExpense(expenseData) {
     dispatch({ type: 'ADD', payload: expenseData });
